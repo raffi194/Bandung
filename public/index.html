@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo bentala putih.png">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://cdn.jsdelivr.net/gh/yesiamrocks/cssanimation.io@1.0.3/cssanimation.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styleguide.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <title>BENTALA</title>
+</head>
+<body class="flex flex-col min-h-screen">
+    <nav class="w-full h-14 z-10 text-[--putih]">
+        <div class="container">
+                <div class="flex justify-center items-center py-5 w-full bg-[--biru]">
+                    <div class="">
+                        <span class="uppercase text-4xl">Bandung</span>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center pb-5 w-full bg-[--biru]">
+                    <div class="">
+                        <span class="uppercase text-lg">Kota metropolitan terbesar di Provinsi Jawa Barat, sekaligus menjadi ibu kota provinsi tersebut</span>
+                    </div>
+                </div>
+            <div id="navbar" class="flex justify-start items-center px-5 py-3 w-full bg-[--birugelap]">
+                <div class="">
+                    <ul class="flex flex-nowrap space-x-10">
+                        <li class="cursor-pointer hover:font-bold">
+                            <span onclick="showsejarah()">Sejarah</span>
+                        </li>
+                        <li class="cursor-pointer hover:font-bold">
+                            <span onclick="showgeografis()">Geografis</span>
+                        </li>
+                        <li class="cursor-pointer hover:font-bold">
+                            <span onclick="showwisata()">Wisata</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <style>
+        .sticky {
+            transition: top 0.3s;
+        }
+    </style>
+
+    <script>
+        window.onscroll = function() {
+            const navbar = document.getElementById("navbar");
+            const sticky = navbar.offsetTop;
+
+            if (window.pageYOffset > sticky) {
+                navbar.classList.add("fixed", "top-0", "left-0", "shadow-lg", "z-50");
+                navbar.classList.remove("bg-[--biru]");
+                navbar.classList.add("bg-[--birugelap]");
+            } else {
+                navbar.classList.remove("fixed", "top-0", "left-0", "shadow-lg", "z-50");
+                navbar.classList.remove("bg-[--birugelap]"); 
+                navbar.classList.add("bg-[--birugelap]");
+            }
+        };
+
+
+    </script>
+
+<div class="flex flex-col items-center w-full px-10 mt-32 h-fit">
+    <ul class="flex flex-nowrap mb-3 w-full h-full">
+        <li class="justify-center w-[70%] h-full"> 
+            <div class="w-8/10 max-w-[100%]">
+                <div class="bg-white shadow-lg shadow-[--hitam] rounded-lg h-fit" id="sejarahcontent">
+                    <article class="mx-10">
+                        <div class="flex-col space-y-4 py-5">    
+                            <span class="font-semibold text-lg text-[--biru]">Sejarah</span>
+                            <img src="img/history.jpg" alt="Sejarah Bandung" class="w-full h-96 object-cover">
+                            <div class="flex-col space-y-4">
+                                <span class="block text-[--hitam]">Kata Bandung berasal dari kata bendung atau bendungan karena terbendungnya sungai Citarum oleh lava Gunung Tangkuban Parahu yang lalu membentuk telaga. Legenda yang diceritakan oleh orang-orang tua di Bandung mengatakan bahwa nama Bandung diambil dari sebuah kendaraan air yang terdiri dari dua perahu yang diikat berdampingan yang disebut perahu bandung yang digunakan oleh Bupati Bandung, R.A. Wiranatakusumah II, untuk melayari Ci Tarum dalam mencari tempat kedudukan kabupaten yang baru untuk menggantikan ibu kota yang lama di Dayeuhkolot.</span>
+                                <span class="block text-[--hitam]">Berdasarkan filosofi Sunda, kata Bandung juga berasal dari kalimat Nga-Bandung-an Banda Indung, yang merupakan kalimat sakral dan luhur karena mengandung nilai ajaran Sunda. Nga-Bandung-an artinya menyaksikan atau bersaksi. Banda adalah segala sesuatu yang berada di alam hidup yaitu di bumi dan atmosfer, baik makhluk hidup maupun benda mati. Sinonim dari banda adalah harta. Indung berarti Ibu atau Bumi, disebut juga sebagai Ibu Pertiwi tempat Banda berada.</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="bg-white shadow-lg shadow-[--hitam] rounded-lg h-fit hidden" id="geografiscontent">
+                    <article class="mx-10">
+                        <div class="flex-col space-y-4 py-5">    
+                            <span class="font-semibold text-lg text-[--biru]">Geografis</span>
+                            <img src="img/geografis.jpg" alt="Geografis Bandung" class="w-full h-96 object-cover">
+                            <div class="flex-col space-y-4">
+                                <span class="block">Kota Bandung dikelilingi oleh pegunungan, sehingga bentuk morfologi wilayahnya bagaikan sebuah mangkok raksasa, secara geografis kota ini terletak di tengah-tengah provinsi Jawa Barat, serta berada pada ketinggian ±768 m di atas permukaan laut, dengan titik tertinggi di berada di sebelah utara dengan ketinggian 1.050 meter di atas permukaan laut dan sebelah selatan merupakan kawasan rendah dengan ketinggian 675 meter di atas permukaan laut.</span>
+                                <span class="block">Kota Bandung dialiri dua sungai utama, yaitu Sungai Cikapundung dan Sungai Citarum beserta anak-anak sungainya yang pada umumnya mengalir ke arah selatan dan bertemu di Sungai Citarum. Dengan kondisi yang demikian, Bandung selatan sangat rentan terhadap masalah banjir terutama pada musim hujan.</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="bg-white shadow-lg shadow-[--hitam] rounded-lg h-fit hidden" id="wisatacontent">
+                    <article class="mx-10">
+                        <div class="flex-col space-y-4 py-5"> 
+                            <span class="font-semibold text-lg text-[--biru]">Wisata</span>
+                            <div class="flex-col space-y-4">    
+                                <span class="block text-[--hitam]">Sejak dibukanya Jalan Tol Cipularang, kota Bandung telah menjadi tujuan utama dalam menikmati liburan akhir pekan terutama dari masyarakat yang berasal dari Jakarta sekitarnya. Selain menjadi kota wisata belanja, kota Bandung juga dikenal dengan sejumlah besar bangunan lama berarsitektur peninggalan Belanda.</span>
+                            </div>
+                            <span class="font-semibold text-lg text-[--biru]">Farm House Lembang</span>
+                            <img src="img/farm-house.jpg" alt="Wisata Bandung" class="w-full h-96 object-cover">
+                            <span class="block text-[--hitam]">Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.</span>
+                            <span class="font-semibold text-lg text-[--biru]">Observatorium Bosscha</span>
+                            <img src="img/bosscha.jpg" alt="Wisata Bandung" class="w-full h-96 object-cover">
+                            <span class="block text-[--hitam]">Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.</span>
+                        </div>
+                    </article>
+                </div>
+
+                <script>
+                    function showsejarah() {
+                        document.getElementById('geografiscontent').classList.add('hidden');
+                        document.getElementById('wisatacontent').classList.add('hidden');
+                        document.getElementById('sejarahcontent').classList.remove('hidden');
+                    }
+                
+                    function showgeografis() {
+                        document.getElementById('wisatacontent').classList.add('hidden');
+                        document.getElementById('sejarahcontent').classList.add('hidden');
+                        document.getElementById('geografiscontent').classList.remove('hidden');
+                    }
+                    function showwisata() {
+                        document.getElementById('sejarahcontent').classList.add('hidden');
+                        document.getElementById('geografiscontent').classList.add('hidden');
+                        document.getElementById('wisatacontent').classList.remove('hidden');
+                    }
+                </script>
+
+            </div>
+        </li>
+
+        <li class="flex justify-end w-[30%]">
+            <main class="flex">
+                <aside class="bg-white shadow-lg shadow-[--hitam] rounded-lg h-fit px-16">
+                    <article>
+                        <header class="text-center">
+                            <h2 class="text-[--biru] font-semibold text-2xl my-5">Kota Bandung</h2>
+                            <p class="my-3 text-[--hitam]">Kota Kembang Paris van Java</p>
+                            <figure>
+                                <img src="img/Bandung_coa.png" alt="Lambang Kota Bandung" class="w-32 h-auto mx-auto" />
+                                <figcaption class="text-[--hitam]">Lambang</figcaption>
+                            </figure>
+                        </header>
+                        <div class="py-5">
+                            <div class="text-lg text-[--biru] font-semibold">
+                                <span>Informasi Lainnya</span>
+                            </div>
+                            <ul class="flex flex-nowrap space-x-5">
+                                <li>
+                                    <div class="text-center text-sm text-[--hitam] flex flex-col">
+                                        <div>
+                                            <span class="font-semibold">Negara</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-semibold">Hari jadi</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-semibold">Luas Total</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-semibold">Bahasa Daerah</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-semibold">Kode Telepon</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="text-start text-sm text-[--hitam] flex flex-col">
+                                        <div>
+                                            <span class="font-normal">Indonesia</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-normal">25 September 1810</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-normal">167,67 km²</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-normal">Sunda</span>
+                                        </div>
+                                        <div>
+                                            <span class="font-normal">+62 22</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </aside>
+            </main>
+        </li>
+    </ul>
+</div>
+
+    <footer class="bg-[--biru] text-[--putih]">
+        <div class="mx-auto px-4 py-8">
+            <div class="relative">
+                <div class="logo mb-4 md:mb-0 absolute left-0">
+                    <img class="company-logo-icon h-10" src="https://raw.githubusercontent.com/dicodingacademy/BelajarDasarPemrogramanWeb/099-shared-files/dicoding-logo.png" alt="dicoding">
+                </div>
+            </div>
+            <div class="flex md:flex-row justify-center items-center">
+                <div class="flex flex-row space-x-14 mb-4 md:mb-0">
+                    <a href="#" class="hover:underline">Customer Service </a>
+                    <a href="#" class="hover:underline" >Sejarah</a>
+                    <a href="#" class="hover:underline" onclick="showgeografis()">Geografis</a>
+                    <a href="#" class="hover:underline" onclick="showwisata()">Wisata</a>
+                    <a href="#" class="hover:underline">FAQ</a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="social-links flex space-x-4 absolute right-0">
+                    <i class="fa-brands fa-facebook fa-lg cursor-pointer" onclick="openVideo()"></i>
+                    <i class="fa-brands fa-instagram fa-lg cursor-pointer" onclick="openInstagram()"></i>
+                    <i class="fa-brands fa-twitter fa-lg cursor-pointer" onclick="openX()"></i>
+                    <i class="fa-brands fa-linkedin fa-lg cursor-pointer" onclick="openlinkedin()"></i>
+                    <i class="fa-brands fa-youtube fa-lg cursor-pointer" onclick="openyt()"></i>
+                </div>
+                <script>
+                    const logo = document.getElementById('logo');
+                    logo.addEventListener('click', function() {
+                        window.location.href = 'index.html'; 
+                    });
+            
+                    function openInstagram() {
+                        window.open('https://www.instagram.com/raffi1__/', '_blank');
+                    }
+            
+                    function openX() {
+                        window.open('https://x.com/Raffi1__', '_blank');
+                    }
+            
+                    function openlinkedin() {
+                        window.open('https://www.linkedin.com/in/muhamadraffi/', '_blank');
+                    }
+            
+                    function openyt() {
+                        window.open('https://www.instagram.com/raffi1__/', '_blank');
+                    }
+            
+                    function openVideo() {
+                        const videoPopup = document.getElementById('videoPopup');
+                        const myVideo = document.getElementById('myVideo');
+                        videoPopup.style.display = 'flex'; 
+                        myVideo.play(); 
+                    }
+            
+                    function answer(response) {
+                        const videoPopup = document.getElementById('videoPopup');
+                        videoPopup.style.display = 'none'; 
+                        const myVideo = document.getElementById('myVideo');
+                        myVideo.pause(); 
+                        myVideo.currentTime = 0; 
+                    }
+                </script>
+            </div>
+            <div class="credits mt-8">
+                <div class="divider border-t border-[--putih] mb-4"></div>
+                <div class="flex flex-col md:flex-row justify-center items-center">
+                    <div class="flex space-x-4 text-sm mt-2 md:mt-0">
+                        <div class="text-sm">© 2024 Relume. Dicoding Academy.</div>
+                        <a href="#" class="hover:underline">Privacy Policy</a>
+                        <a href="#" class="hover:underline">Terms of Service</a>
+                        <a href="#" class="hover:underline">Cookies Settings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js'></script>
+    <script src='https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js'></script>
+    <script src='https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js'></script>
+    <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
+    <script src="https:// cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+</body>
+</html>
